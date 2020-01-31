@@ -1,0 +1,352 @@
+<div class="panel panel-default" *ngIf="authority === 'DRHE'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default" *ngIf="authority === 'Agent_de_saisi_FOP'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>MOTIF DU REJET</th><th>REJETER PAR</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td>{{a.motifRejet}}</td>
+            <td>{{a.auteur}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division_Fop'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service_Fop'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'DRHE_Fop'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Secretaire_MEF'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Comptable_verificateur_Mef'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division_Mef'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service_Mef'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Charge_d_Etudes_CF'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>N° du VISA FINANCIER</th><th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.visaMEF}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Directeur_ou_Chef_de_Service_CF'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>N° du VISA FINANCIER</th><th>NOM</th><th>PRENOM</th><th>CIN</th><th>DOSSIER</th><th>SITUATION DE DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="recrutement">
+          <tr *ngFor="let a of recrutement._embedded.interesses">
+            <td>{{a.visaMEF}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.cIN}}</td>
+            <td>{{a.dossier}}</td>
+            <td>{{a.situationDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

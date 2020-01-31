@@ -1,0 +1,108 @@
+<div class="panel panel-default">
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="mode==1">
+      <form name="form" #f="ngForm" (ngSubmit)="onSaveAgent(f.value)">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA</label>
+              <input class="form-control" placeholder="SOA" type="text" name="soa" ngModel
+              required>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps</label>
+              <input class="form-control" type="text" placeholder="Corps" name="corps" required="required" ngModel>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM</label>
+              <input class="form-control" type="text" name="im" placeholder="Numero matricule" required="required" ngModel>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA</label>
+              <input class="form-control" type="text" name="libelleSOA" placeholder="libellé SOA" required="required" ngModel>
+            </div>
+          </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade</label>
+            <input class="form-control" type="text" name="grade" placeholder="Grade" required="required" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA</label>
+            <input class="form-control" type="text" name="nouveauSOA" placeholder="Nouveau SOA" required="required" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA</label>
+            <input class="form-control" type="text" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation</label>
+            <input class="form-control" type="text" name="observation" id="observation" placeholder="Obsérvation" required ngModel>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation</label>
+            <input class="form-control" type="text" name="typeAffectation" placeholder="Type afféctation" required ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nom</label>
+            <input class="form-control" type="text" placeholder="Nom" name="nom" required="required" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Prénom(s)</label>
+            <input class="form-control" type="text" name="prenoms" placeholder="Prénom(s)" required="required" ngModel>
+          </div>
+          <button class="btn btn-success" type="submit">Envoyer</button>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Etape du dossier : </label><p></p>
+            <input class="form-control" type="hidden" value="deuxième étape" name="referenceDossier" placeholder="Etape du dossier" required ngModel="2ème étape"><label class="control-label"><span class="label label-default">Information a envoyer vers le chef de division</span></label>
+          </div>
+        </div> 
+      </div>
+    </form>
+      <div class="panel-body" *ngIf="mode==2">
+        <button class="btn btn-success" (click)="onNewAgent()">Nouveau</button>
+        <p></p>
+            <div class="form-group">
+              <label class="control-label">ID :</label>
+              <label>{{currentAffectation.id}}</label>
+              <p></p>
+              <label class="control-label">IM :</label>
+              <label>{{currentAffectation.im}}</label>
+              <p></p>
+              <label class="control-label">NOM :</label>
+              <label>{{currentAffectation.nom}}</label>
+              <p></p>
+              <label class="control-label">PRENOM(S) :</label>
+              <label>{{currentAffectation.prenoms}}</label>
+              <p></p>
+              <label class="control-label">CORPS :</label>
+              <label>{{currentAffectation.corps}}</label>
+              <p></p>
+              <label class="control-label">GRADE :</label>
+              <label>{{currentAffectation.grade}}</label>
+              <p></p>
+              <label class="control-label">SOA :</label>
+              <label>{{currentAffectation.soa}}</label>
+              <p></p>
+              <label class="control-label">LIBELLE SOA :</label>
+              <label>{{currentAffectation.libelleSOA}}</label>
+              <p></p>
+              <label class="control-label">NOUVEAU SOA :</label>
+              <label>{{currentAffectation.nouveauSOA}}</label>
+              <p></p>
+              <label class="control-label">LIBELLE DU NOUVEAU SOA :</label>
+              <label>{{currentAffectation.nouveauLibelleSOA}}</label>
+              <p></p>
+              <label class="control-label">TYPE D'AFFECTATION :</label>
+              <label>{{currentAffectation.typeAffectation}}</label>
+              <p></p>
+              <label class="control-label">ETAPE DU DOSSIER :</label>
+              <label>{{currentAffectation.referenceDossier}}</label>
+            </div>
+      </div>
+</div>

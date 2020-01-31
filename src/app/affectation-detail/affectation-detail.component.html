@@ -1,0 +1,1263 @@
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="3ème étape"><label class="control-label">Dossier a envoyer vers le chef de service</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label>
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel>
+          </div>
+            <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel="Chef_de_division_ME">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="4ème étape"><label class="control-label">Dossier a envoyer vers le DRHE</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label>
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel>
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel="Chef_de_service_ME">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'DRHE'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="5ème étape"><label class="control-label">Dossier a envoyer vers le Chef de division auprés de la fonction publique</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div> 
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label>
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel>
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel="DRH_ME">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division_Fop'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="6ème étape"><label class="control-label">Dossier a envoyer vers le Chef de service auprés de la fonction publique</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div> 
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label>
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel>
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel="Chef_de_division_FOP">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service_Fop'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="7ème étape"><label class="control-label">Dossier a envoyer vers le DRHE auprés de la fonction publique</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div> 
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label>
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel>
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel="Chef_de_service_FOP">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'DRHE_Fop'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="8ème étape"><label class="control-label">Dossier a envoyer vers le Comptable vérificateur auprés de la Finance(MEF)</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div> 
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label>
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel>
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel="DRHE_FOP">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Comptable_verificateur_Mef'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="9ème étape"><label class="control-label">Dossier a envoyer vers le Chef de division auprés de la Finance(MEF)</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div> 
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label> 
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel>
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel="Comptable_verificateur_Finance">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division_Mef'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="10ème étape"><label class="control-label">Dossier a envoyer vers le Chef de division auprés de la Finance(MEF)</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button> 
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div> 
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label> 
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel> 
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Acteur" ngModel="Chef_de_division_Finance">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button> 
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service_Mef'">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+              <button class="btonrej btn-danger" (click)="onRejetAffectation()">Rejeter</button>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="11ème étape"><label class="control-label">Dossier a envoyer vers le Comptable Vérificateur auprés du control Financier)</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group"> 
+            <label class="control-label">Attribution Visa Financier dans en cas de validation:</label> 
+            <input class="form-control" type="hidden" name="visaFinancier" placeholder="Numero Visa financier" required ngModel="FIN-11-{{currentAffectation.im}}"><h2><span class="label label-danger"><label class="control-label">FIN-11-{{currentAffectation.im}}</label></span></h2>
+          </div>
+          <button class="bton btn-success" type="submit">Valider</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Saisie d'un nouveau agent affécter</div> 
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA: </label>
+              <input class="form-control" placeholder="SOA" type="hidden" name="soa" ngModel [(ngModel)]="currentAffectation.SOA"><label class="control-label">{{currentAffectation.soa}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps: </label>
+              <input class="form-control" type="hidden" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps"><label class="control-label">{{currentAffectation.corps}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM: </label>
+              <input class="form-control" type="hidden" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im"><label class="control-label">{{currentAffectation.im}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA: </label>
+              <input class="form-control" type="hidden" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA"><label class="control-label">{{currentAffectation.libelleSOA}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom: </label>
+              <input class="form-control" type="hidden" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom"><label class="control-label">{{currentAffectation.nom}}</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s): </label>
+              <input class="form-control" type="hidden" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms"><label class="control-label">{{currentAffectation.prenoms}}</label>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade: </label>
+            <input class="form-control" type="hidden" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade"><label class="control-label">{{currentAffectation.grade}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA"><label class="control-label">{{currentAffectation.nouveauSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA: </label>
+            <input class="form-control" type="hidden" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA"><label class="control-label">{{currentAffectation.nouveauLibelleSOA}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation: </label>
+            <input class="form-control" type="hidden" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation"><label class="control-label">{{currentAffectation.observation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="1ère étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="1ère étape"><label class="control-label">Dossier a envoyer vers l'Agent de saisie</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation: </label>
+            <input class="form-control" type="hidden" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation"><label class="control-label">{{currentAffectation.typeAffectation}}</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Motif du rejet</label> 
+            <input class="form-control" type="text" name="motifRejet" placeholder="Motif du rejet" required ngModel> 
+          </div>
+          <input class="form-control" type="hidden" name="acteur" placeholder="Acteur" ngModel="Chef_de_division_Finance">
+          <button class="btonrej btn-danger" type="submit">Valider Rejet</button> 
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+  

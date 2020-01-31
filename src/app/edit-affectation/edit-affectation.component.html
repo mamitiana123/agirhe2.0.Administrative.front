@@ -1,0 +1,68 @@
+<div class="panel panel-default">
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);">Saisie d'un nouveau agent affécter</div>
+    <div class="panel-body" *ngIf="currentAffectation">
+      <form #f="ngForm" (ngSubmit)="onUpdtateAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">SOA</label>
+              <input class="form-control" placeholder="SOA" type="text" name="soa" ngModel [(ngModel)]="currentAffectation.soa">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Corps</label>
+              <input class="form-control" type="text" placeholder="Corps" name="corps" ngModel [(ngModel)]="currentAffectation.corps">
+            </div>
+            <div class="form-group">
+              <label class="control-label">IM</label>
+              <input class="form-control" type="text" name="im" placeholder="Numero matricule" ngModel [(ngModel)]="currentAffectation.im">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Libellé SOA</label>
+              <input class="form-control" type="text" name="libelleSOA" placeholder="libellé SOA" ngModel [(ngModel)]="currentAffectation.libelleSOA">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nom</label>
+              <input class="form-control" type="text" placeholder="Nom" name="nom" ngModel ngModel [(ngModel)]="currentAffectation.nom">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénom(s)</label>
+              <input class="form-control" type="text" name="prenoms" placeholder="Prénom(s)" ngModel ngModel [(ngModel)]="currentAffectation.prenoms">
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Grade</label>
+            <input class="form-control" type="text" name="grade" placeholder="Grade" ngModel ngModel [(ngModel)]="currentAffectation.grade">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau SOA</label>
+            <input class="form-control" type="text" name="nouveauSOA" placeholder="Nouveau SOA" ngModel [(ngModel)]="currentAffectation.nouveauSOA">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Nouveau libellé SOA</label>
+            <input class="form-control" type="text" name="nouveauLibelleSOA" placeholder="Nouveau libellé SOA" ngModel [(ngModel)]="currentAffectation.nouveauLibelleSOA">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Obsérvation</label>
+            <input class="form-control" type="text" name="observation" placeholder="Obsérvation" ngModel [(ngModel)]="currentAffectation.observation">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Etape du dossier: </label>
+            <input class="form-control" type="hidden" value="première étape" name="referenceDossier" placeholder="Etape du dossier" ngModel="2ème étape"><label class="control-label">Dossier a envoyer vers le chef de division</label>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Type d'afféctation</label>
+            <input class="form-control" type="text" name="typeAffectation" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.typeAffectation">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Rejeter par:</label>
+            <input class="form-control" type="hidden" name="acteur" placeholder="Type afféctation" ngModel [(ngModel)]="currentAffectation.acteur"><label class="control-label">{{currentAffectation.acteur}}</label>
+          </div>
+          <button class="btn btn-success" type="submit">Envoyer</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+
+.container{
+    width: 100%;
+    margin-top:0;
+    /*box-shadow: 0 15px 40px rgba(0,0,0,.5);*/
+    /*opacity: 0.95;*/
+    padding-top: 52px;
+    margin: none;
+    
+}
+/* .navbar{
+    background-color:#3673A6;
+    color: white; 
+} */
+.topnav {
+    overflow: hidden;
+    background-color: #333; 
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: rgb(245, 143, 10);
+    color: white; 
+  }
+  .content {
+    position: fixed; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding-top: 5px; /* Some padding */
+    height: 87px;
+    padding-left: 15px;
+  }
+  .a{
+    cursor: pointer;
+  }

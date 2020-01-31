@@ -1,0 +1,73 @@
+<div>
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li> MTEFPLS</li>
+      <li> MEF/SGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);">Saisie d'un nouveau agent a recruter</div>
+    <div class="panel-body" *ngIf="mode==1">
+      <form name="form" #f="ngForm" (ngSubmit)="onSaveAgent(f.value)">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">Nom</label>
+              <input class="form-control" placeholder="nom" type="text" name="nom" ngModel
+              required>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Prénoms</label>
+              <input class="form-control" type="text" placeholder="Prénom(s)" name="prenom" required="required" ngModel>
+            </div>
+            <div class="form-group">
+              <label class="control-label">CIN</label>
+              <input class="form-control" type="text" name="cIN" placeholder="CIN" required="required" ngModel>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Dossier</label>
+              <p></p>
+              <label class="control-label">Oui :</label><input class="form-control" value="1" type="checkbox" name="dossier" required="required" ngModel>
+            </div>
+          </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label class="control-label">Etape du dossier : </label><p></p>
+            <input class="form-control" type="hidden" value="deuxième étape" name="situationDossier" placeholder="Etape du dossier" required ngModel="2ème étape"><label class="control-label"><span class="label label-default">Information a envoyer vers l'agent de saisie vers la Fonction publique</span></label>
+          </div>
+          <button class="btn btn-success" type="submit">Envoyer</button>
+        </div> 
+      </div>
+    </form>
+  </div>
+      <div class="panel-body" *ngIf="mode==2">
+        <button class="btn btn-success" (click)="onNewAgent()">Nouveau</button>
+        <p></p>
+            <div class="form-group">
+              <label class="control-label">CIN :</label>
+              <label>{{currentRecrutement.cIN}}</label>
+              <p></p>
+              <label class="control-label">NOM :</label>
+              <label>{{currentRecrutement.nom}}</label>
+              <p></p>
+              <label class="control-label">PRENOM(S) :</label>
+              <label>{{currentRecrutement.prenom}}</label>
+              <p></p>
+              <label class="control-label">DOSSIER :</label>
+              <label>{{currentRecrutement.dossier}}</label>
+              <p></p>
+              <label class="control-label">ETAPE DU DOSSIER :</label>
+              <label>{{currentRecrutement.situationDossier}} Dossier deja envoyer vers l'agent de saisi aupres de la Fop</label>
+            </div>
+      </div>
+    </div>
+
+
+

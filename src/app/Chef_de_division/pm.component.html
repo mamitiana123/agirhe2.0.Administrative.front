@@ -1,0 +1,17 @@
+
+  <div class="sidebar">
+    <a class="active"routerLink="affectation"><span class="glyphicon glyphicon-ok"></span> MODULE AFFECTATION</a>
+    <a routerLink="affectation">Acceuil <span class="glyphicon glyphicon-home"></span></a>
+    <a style="cursor: pointer;" href="#home">Flux du dossier <span class="glyphicon glyphicon-book"></span></a>
+    <li class="dropdown">
+      <a data-toggle="dropdown" href="#">Affectation intra ministérielle <span class="glyphicon glyphicon-envelope"></span>
+       <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="affectation" style="color: rgb(2, 2, 2);"><span class="glyphicon glyphicon-list"></span> Voir la liste</a></li>
+      </ul>
+</li>
+    <a style="cursor: pointer;" (click)="logout()">Deconnexion <span class="glyphicon glyphicon-off"></span></a>
+  </div>
+<div class="content">
+  <router-outlet></router-outlet> 
+</div>

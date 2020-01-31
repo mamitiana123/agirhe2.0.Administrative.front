@@ -1,0 +1,17 @@
+
+    <div class="card text-center" *ngIf="info.token; else loggedOut" >
+    <div class="card-header">
+       <h2>Votre information</h2>
+    </div>
+    <div class="card-body">
+        <h4><strong>Username: </strong> </h4> {{info.username}}<br/>
+        <h4><strong>Roles: </strong> </h4> {{info.authorities}}<br/>
+    </div>
+    <p></p>
+    <button class="btn btn-primary" (click)="logout()">Déconnexion</button>
+  </div>
+
+  
+  <ng-template #loggedOut>
+        <h4>Veuillez vous connecter <strong>s'il vous plait!</strong></h4>
+  </ng-template>

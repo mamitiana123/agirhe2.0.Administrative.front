@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des agent à affecter</div>
+    <div class="panel-body">
+      <button class="btn btn-primary" (click)="onGetAffectation()">Liste</button>
+    </div>
+    <div class="panel-body">
+      <form #f="ngForm" (ngSubmit)="onChercher (f.value)">
+        <div class="form-group">
+          <label>Mot clé:</label>
+          <input type="text" name="motCle" ngModel>
+          <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>Chercher</button>
+        </div>
+      </form>
+      <table *ngIf="affectation" class="table table-striped">
+        <tr>
+          <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>REFERENCE</th><th>ACTION</th>
+        </tr>
+        <tr *ngFor="let a of affectation._embedded.affectations">
+          <td>{{a.im}}</td>
+          <td>{{a.soa}}</td>
+          <td>{{a.nouveauSOA}}</td>
+          <td>{{a.nom}}</td>
+          <td>{{a.prenoms}}</td>
+          <td>{{a.observation}}</td>
+          <td>{{a.referenceDossier}}</td>
+          <td> <a class="btn btn-success" (click)="onDetailAgent(a)">Details</a></td>
+        </tr>
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

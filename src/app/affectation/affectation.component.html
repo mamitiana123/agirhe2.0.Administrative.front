@@ -1,0 +1,339 @@
+
+<div class="panel panel-default" *ngIf="authority === 'Agent_de_saisie_ME'"> 
+  <div class="panel panel-primary">
+    <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à affecter </div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>MOTIF DE REJET</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="affectation">
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td>{{a.motifRejet}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="affectation">
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="affectation" >
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'DRHE'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead *ngIf="affectation" >
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division_Fop'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"> 
+        <thead *ngIf="affectation" >
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service_Fop'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"> 
+        <thead *ngIf="affectation" >
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default" *ngIf="authority === 'DRHE_Fop'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"> 
+        <thead *ngIf="affectation" >
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Comptable_verificateur_Mef'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"> 
+        <thead *ngIf="affectation" >
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_division_Mef'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"> 
+        <thead *ngIf="affectation" >
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" *ngIf="authority === 'Chef_de_service_Mef'">
+  <div class="panel panel-primary">
+    <div class="panel-heading"style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span>Liste des agent à affecter</div>
+
+    <div class="panel-body">
+      <table  class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"> 
+        <thead *ngIf="affectation" >
+          <tr>
+            <th>MATRICULE</th><th>SOA</th><th>NOUVEAU SOA</th><th>NOM</th><th>PRENOM</th><th>OBSERVATION</th><th>SITUATION DU DOSSIER</th><th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of affectation._embedded.affectations">
+            <td>{{a.im}}</td>
+            <td>{{a.soa}}</td>
+            <td>{{a.nouveauSOA}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenoms}}</td>
+            <td>{{a.observation}}</td>
+            <td>{{a.referenceDossier}}</td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+          </tr>
+        </tbody>  
+      </table>
+      <ul>
+        <li *ngFor="let p of pages">
+          <a>{{p}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

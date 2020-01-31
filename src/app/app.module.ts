@@ -34,6 +34,7 @@ import { SercretaireMefComponent } from './sercretaire-mef/sercretaire-mef.compo
 import { ChargeEtudeCFComponent } from './charge-etude-cf/charge-etude-cf.component';
 import { ChefDeServiceCFComponent } from './chef-de-service-cf/chef-de-service-cf.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     NouveauNacdComponent,
     SercretaireMefComponent,
     ChargeEtudeCFComponent,
-    ChefDeServiceCFComponent
+    ChefDeServiceCFComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

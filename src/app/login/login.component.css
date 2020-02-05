@@ -46,12 +46,12 @@
   .bg{
     background-image: url("/assets/backLogin.jpg") ;
     /* Full height */
-    height: 1000px;
+    height: 1300px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
-    padding-top: 202px;
+    padding-top: 173px;
     opacity: 0.90;
 }
   

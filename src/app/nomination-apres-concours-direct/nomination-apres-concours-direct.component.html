@@ -1,3 +1,121 @@
+<div *ngIf="authority === 'Agent_de_saisi_FOP'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="authority === 'Chef_de_division_Fop'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+<div  *ngIf="authority === 'Chef_de_service_Fop'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+<div *ngIf="authority === 'DRHE_Fop'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+<div  *ngIf="authority === 'Secretaire_MEF'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+<div  *ngIf="authority === 'Comptable_verificateur_Mef'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+
+<div  *ngIf="authority === 'Chef_de_division_Mef'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+
+<div  *ngIf="authority === 'Chef_de_service_Mef'">
+  <div class="panel-body">
+    <ul class="progressBar">
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> ME</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MTEFPLS</li>
+      <li class="active"><span class="glyphicon glyphicon-ok"></span> MEF/DGEAE</li>
+      <li> MEF/DGCF</li>
+      <li> MTEFPLS</li>
+      <li> PRIMATURE</li>
+      <li> ME</li>
+      <li>MEF</li>
+    </ul>
+  </div>
+</div>
+
+
+
 <div class="panel panel-default" *ngIf="authority === 'DRHE'"> 
   <div class="panel panel-primary">
     <div class="panel-heading" style=" background: rgb(8, 22, 29);"><span class="glyphicon glyphicon-list"></span> Liste des agent à recruter</div>
@@ -15,7 +133,7 @@
             <td>{{a.cIN}}</td>
             <td>{{a.dossier}}</td>
             <td>{{a.situationDossier}}</td>
-            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Details</a></td>
+            <td><a class="btn btn-success" (click)="onEditAgent(a)"><span class="glyphicon glyphicon-envelope"></span> Ajouter</a></td>
           </tr>
         </tbody>  
       </table>

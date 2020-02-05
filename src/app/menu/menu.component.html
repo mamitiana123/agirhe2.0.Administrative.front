@@ -1,5 +1,5 @@
 <div class="nav-side-menu">
-  <div class="brand">Augure Administrative 2.0</div>
+  <div class="brand" style="background-color:  rgba(11, 99, 37, 0.925);">Augure Administrative 2.0</div>
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
   <div class="menu-list">
@@ -15,7 +15,13 @@
      <i class="fa fa-gift fa-lg"></i> Recrutement <span class="arrow"></span>
       </li>
       <ul class="sub-menu collapse" id="products">
-        <li class="active"><a href="#">Par voie de concour direct</a></li>
+        <li class="dropdown">
+          <a data-toggle="dropdown" href="#">Nomination après concours direct <span class="glyphicon glyphicon-envelope"></span>
+           <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="nomination-apres-concours-direct" style="color: rgb(245, 240, 240);"><span class="glyphicon glyphicon-list"></span> Voir la liste</a></li>
+          </ul>
+        </li>
         <li><a href="#">Par voie de concour profissionnel</a></li>
         <li><a href="#">Par voie de nomination sur titre</a></li>
         <li><a href="#">Par voie d'Integration</a></li>
@@ -61,3 +67,5 @@
     </ul>
   </div>
 </div>
+
+

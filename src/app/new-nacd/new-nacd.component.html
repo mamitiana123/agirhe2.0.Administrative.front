@@ -15,32 +15,47 @@
   <div class="panel panel-primary">
     <div class="panel-heading" style=" background: rgb(8, 22, 29);">Saisie d'un nouveau agent a recruter</div>
     <div class="panel-body" *ngIf="mode==1">
-      <form name="form" #f="ngForm" (ngSubmit)="onSaveAgent(f.value)">
+      <form role="form" name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSaveAgent(f.value)" novalidate>
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
-              <label class="control-label">Nom</label>
-              <input class="form-control" placeholder="nom" type="text" name="nom" ngModel
+              <label  class="control-label">Nom</label>
+              <input class="form-control" placeholder="nom" type="text" name="nom" id="nom" ngModel #nom = "ngModel"
               required>
+              <div *ngIf="f.submitted && nom.invalid">
+                <div *ngIf="nom.errors.required" class="alert alert-danger">Nom est requis</div>
+              </div>
             </div>
             <div class="form-group">
               <label class="control-label">Prénoms</label>
-              <input class="form-control" type="text" placeholder="Prénom(s)" name="prenom" required="required" ngModel>
+              <input class="form-control" type="text" placeholder="Prénom(s)" name="prenom"id="prenom" ngModel #prenom = "ngModel"
+              required>
+              <div *ngIf="f.submitted && prenom.invalid">
+                <div *ngIf="prenom.errors.required" class="alert alert-danger">Prénom(s) est requis</div>
+              </div>
             </div>
             <div class="form-group">
               <label class="control-label">CIN</label>
-              <input class="form-control" type="text" name="cIN" placeholder="CIN" required="required" ngModel>
+              <input class="form-control" type="text" name="cIN" placeholder="CIN" id="cIN" ngModel #cIN = "ngModel"
+              required>
+              <div *ngIf="f.submitted && cIN.invalid">
+                <div *ngIf="cIN.errors.required" class="alert alert-danger">CIN est requis</div>
+              </div>
             </div>
             <div class="form-group">
               <label class="control-label">Dossier</label>
               <p></p>
-              <label class="control-label">Oui :</label><input class="form-control" value="1" type="checkbox" name="dossier" required="required" ngModel>
-            </div>
+              <label class="control-label">Oui :</label><input class="form-control" value="1" type="checkbox" name="dossier" id="dossier" ngModel #dossier = "ngModel"
+              required>
+              <div *ngIf="f.submitted && dossier.invalid">
+                <div *ngIf="dossier.errors.required" class="alert alert-danger">Dossier complét est requis</div>
+              </div>
           </div>
+        </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="form-group">
             <label class="control-label">Etape du dossier : </label><p></p>
-            <input class="form-control" type="hidden" value="deuxième étape" name="situationDossier" placeholder="Etape du dossier" required ngModel="2ème étape"><label class="control-label"><span class="label label-default">Information a envoyer vers l'agent de saisie vers la Fonction publique</span></label>
+            <input class="form-control" type="hidden" value="deuxième étape" name="situationDossier" placeholder="Etape du dossier" required ngModel="2ème étape"><label class="control-label">Information a envoyer vers l'agent de saisie vers la Fonction publique</label>
           </div>
           <button class="btn btn-success" type="submit">Envoyer</button>
         </div> 
@@ -51,6 +66,9 @@
         <button class="btn btn-success" (click)="onNewAgent()">Nouveau</button>
         <p></p>
             <div class="form-group">
+              <label class="control-label">ID :</label>
+              <label>{{currentRecrutement.idInteresse}}</label>
+              <p></p>
               <label class="control-label">CIN :</label>
               <label>{{currentRecrutement.cIN}}</label>
               <p></p>
@@ -67,7 +85,7 @@
               <label>{{currentRecrutement.situationDossier}} Dossier deja envoyer vers l'agent de saisi aupres de la Fop</label>
             </div>
       </div>
-    </div>
+</div>
 
 
 

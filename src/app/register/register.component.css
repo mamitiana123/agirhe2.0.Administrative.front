@@ -1,0 +1,65 @@
+.bg-img {
+    width:100%;
+    margin-top:0;
+    box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    opacity: 1;
+    padding: 70px;
+    padding-top: 52px;
+    background-color: white;
+    position:absolute;
+    }
+    
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    .bton {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .bton:hover {
+      opacity: 1;
+    }
+    .container-fluid {
+      position: center;
+      right: 0;
+      margin-right: 500px;
+      max-width: 400px;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    }
+    .bg{
+      background-image: url("/assets/backLogin.jpg") ;
+      /* Full height */
+      height: 1300px;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; 
+      padding-top: 173px;
+      opacity: 0.90;
+  }
+  .bton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }  
